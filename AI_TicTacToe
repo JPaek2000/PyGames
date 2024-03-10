@@ -5,7 +5,7 @@ class TicTacToe:
 
     def print_board(self):
         for i in range(0, 9, 3):
-            print(" | ".join(self.board[i:i+3]))
+            print(" | ".join(self.board[i:i + 3]))
             if i < 6:
                 print("-" * 9)
 
@@ -34,6 +34,9 @@ class TicTacToe:
     def switch_player(self):
         self.current_player = "O" if self.current_player == "X" else "X"
 
+    def reset_board(self):
+        self.board = [" "] * 9
+
     def run(self):
         while True:
             self.print_board()
@@ -42,11 +45,21 @@ class TicTacToe:
                 if self.check_winner():
                     self.print_board()
                     print(f"Player {self.current_player} wins!")
-                    break
+                    play_again = input("Do you want to play again? (yes/no): ").lower()
+                    if play_again == "yes":
+                        self.reset_board()
+                        continue
+                    else:
+                        break
                 elif " " not in self.board:
                     self.print_board()
                     print("It's a tie!")
-                    break
+                    play_again = input("Do you want to play again? (yes/no): ").lower()
+                    if play_again == "yes":
+                        self.reset_board()
+                        continue
+                    else:
+                        break
 
 if __name__ == "__main__":
     game = TicTacToe()

@@ -67,7 +67,7 @@ class TicTacToe:
 
             if self.check_winner():
                 self.print_board()
-                print(f"Player {self.current_player} wins!")
+                print(f"Player {'O' if self.current_player == 'X' else 'X'} wins!")
                 play_again = input("Do you want to play again? (yes/no): ").lower()
                 if play_again == "yes":
                     self.reset_board()

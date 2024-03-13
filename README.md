@@ -1,2 +1,2 @@
 # PyGames
-A repository collecting projects of games I have created using Python
+"PyGames" is a web application built with Flask, allowing users to access and play a collection of nine distinct games. The platform features a clean and intuitive homepage with links to each game, fostering an engaging and user-friendly experience. From classic board games to custom creations, "pygames" provides a versatile hub for entertainment and fun, demonstrating the flexibility and power of Python and Flask for web development.

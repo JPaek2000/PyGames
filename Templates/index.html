@@ -1,9 +1,16 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h2>Welcome to pygames!</h2>
-<ul>
-    <li><a href="{{ url_for('TicTacToe') }}">TicTacToe</a></li>
-    <!-- Add more game links as needed -->
-</ul>
+    <h2>Welcome to pygames!</h2>
+    <ul style="list-style-type: none;">
+        <li>
+            <button>
+                <a href="{{ url_for('TicTacToe') }}" style="font-family: 'Comic Sans MS', cursive;">
+                    <img src="{{ url_for('static', filename='images/tictactoe.png') }}" alt="TicTacToe Image">
+                    TicTacToe
+                </a>
+            </button>
+        </li>
+        <!-- Add more game links as needed -->
+    </ul>
 {% endblock %}

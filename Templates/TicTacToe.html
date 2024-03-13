@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Welcome to Tic-Tac-Toe!</h2>
+    <div id="board-container">
+        <table id="board"></table>
+        <p id="result"></p>
+        <button onclick="resetGame()">Reset Game</button>
+    </div>
+    <script src="{{ url_for('static', filename='tictactoe.js') }}"></script>
+{% endblock %}

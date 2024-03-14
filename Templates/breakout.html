@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Welcome to Breakout!</h2>
+    <canvas id="breakoutCanvas" width="480" height="320"></canvas>
+    <script src="{{ url_for('static', filename='breakout.js') }}"></script>
+{% endblock %}

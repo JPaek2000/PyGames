@@ -9,7 +9,11 @@ def home():
 
 @app.route('/TicTacToe')
 def TicTacToe():
-    return render_template('TicTacToe.html')
+    return render_template('tictactoe.html')
+
+@app.route('/Breakout')
+def Breakout():
+    return render_template('breakout.html')
 
 # Add more routes for other games
 

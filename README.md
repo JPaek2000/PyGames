@@ -15,12 +15,12 @@ Make sure you have Python and pip installed on your system.
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/pygames.git
+   git clone https://github.com/yourusername/PyGames.git
 
 2. Navigate to the project directory:
 
     ```bash
-    cd pygames
+    cd PyGames
 
 3. Create a virtual environment (optional but HIGHLY recommended):
 
@@ -30,11 +30,9 @@ Make sure you have Python and pip installed on your system.
 4. Activate the virtual environment:
 
 On Windows:
-    ```bash
     venv\Scripts\activate
 
 On macOS and Linux:
-    ```bash
     source venv/bin/activate
 
 5. Install Flask:

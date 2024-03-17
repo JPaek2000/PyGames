@@ -1,23 +1,19 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h2>Welcome to pygames!</h2>
-    <ul style="list-style-type: none;">
+    <h2>Compete in a series of 9 AI games and get your name on the LEADERBOARD OF GLORY ♛</h2>
+    <ul class="game-list">
         <li>
-            <button>
-                <a href="{{ url_for('TicTacToe') }}" style="font-family: 'Comic Sans MS', cursive;">
-                    <img src="{{ url_for('static', filename='images/tictactoe.png') }}" alt="TicTacToe Image">
-                    TicTacToe
-                </a>
-            </button>
+            <a href="{{ url_for('TicTacToe') }}">
+                <img src="{{ url_for('static', filename='images/tictactoe.png') }}" alt="TicTacToe Image">
+                <span>TicTacToe</span>
+            </a>
         </li>
         <li>
-            <button>
-                <a href="{{ url_for('Breakout') }}" style="font-family: 'Comic Sans MS', cursive;">
-                    <img src="{{ url_for('static', filename='images/breakout.png') }}" alt="Breakout Image">
-                    Breakout
-                </a>
-            </button>
+            <a href="{{ url_for('Breakout') }}">
+                <img src="{{ url_for('static', filename='images/breakout.png') }}" alt="Breakout Image">
+                <span>Breakout</span>
+            </a>
         </li>
         <!-- Add more game links as needed -->
     </ul>

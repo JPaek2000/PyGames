@@ -1,7 +1,66 @@
+/* CSS for base template */
 body {
     font-family: Arial, sans-serif;
+    background-color: #000;
+    color: #fff;
 }
 
+header {
+    text-align: center;
+    padding: 20px 0;
+}
+
+header h1 {
+    font-size: 36px;
+}
+
+main {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.game-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.game-list li {
+    display: inline-block;
+    margin: 20px;
+}
+
+.game-list li a {
+    display: block;
+    text-decoration: none;
+    color: #fff;
+}
+
+.game-list li a img {
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+    border: 5px solid #fff;
+}
+
+.game-list li a span {
+    display: block;
+    margin-top: 10px;
+    font-size: 24px;
+}
+
+footer {
+    text-align: center;
+    margin-top: 50px;
+    padding: 20px 0;
+}
+
+footer p {
+    font-size: 16px;
+} 
+
+
+/* CSS for my TicTacToeGame */
 #board-container {
     text-align: center;
 }
@@ -22,11 +81,4 @@ body {
 #result {
     font-size: 18px;
     margin-top: 10px;
-}
-
-button {
-    font-size: 16px;
-    padding: 10px;
-    margin-top: 10px;
-    cursor: pointer;
 }

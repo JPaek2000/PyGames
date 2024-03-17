@@ -43,9 +43,9 @@ On macOS and Linux:
     pip install Flask
 
 #### Usage of Flask App
-
-    ```bash
+    
     flask run
+
 Open your web browser and navigate to http://localhost:5000.
 
 Explore the PyGames platform and enjoy playing my games!

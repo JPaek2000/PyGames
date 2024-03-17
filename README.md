@@ -30,9 +30,11 @@ Make sure you have Python and pip installed on your system.
 4. Activate the virtual environment:
 
 On Windows:
+    ```bash
     venv\Scripts\activate
 
 On macOS and Linux:
+    ```bash
     source venv/bin/activate
 
 5. Install Flask:

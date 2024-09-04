@@ -82,3 +82,8 @@ footer p {
     font-size: 18px;
     margin-top: 10px;
 }
+
+/* CSS for breakout */
+#breakoutCanvas {
+    border: 10px solid green;
+}

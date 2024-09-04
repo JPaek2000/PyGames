@@ -16,9 +16,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Event listeners for paddle movement
     document.addEventListener('keydown', (e) => {
-        if (e.key === 'ArrowLeft' && paddleX > 0) {
+        if (e.key === 'a' && paddleX > 0) { // Move left with 'A'
             paddleX -= 7;
-        } else if (e.key === 'ArrowRight' && paddleX < canvas.width - paddleWidth) {
+        } else if (e.key === 'd' && paddleX < canvas.width - paddleWidth) { // Move right with 'D'
             paddleX += 7;
         }
     });

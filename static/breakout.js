@@ -69,9 +69,19 @@ document.addEventListener('DOMContentLoaded', () => {
                     blocks[c][r].x = blockX;
                     blocks[c][r].y = blockY;
 
+                    // Set block color based on row and column
+                    let blockColor;
+                    if ((c + r) % 3 === 0) {
+                        blockColor = '#FF0000'; // Red
+                    } else if ((c + r) % 3 === 1) {
+                        blockColor = '#0000FF'; // Blue
+                    } else {
+                        blockColor = '#00FF00'; // Green
+                    }
+
                     ctx.beginPath();
                     ctx.rect(blockX, blockY, blockWidth, blockHeight);
-                    ctx.fillStyle = '#00FF00'; // changed green
+                    ctx.fillStyle = blockColor;
                     ctx.fill();
                     ctx.closePath();
                 }

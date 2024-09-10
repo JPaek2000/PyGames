@@ -15,11 +15,22 @@ document.addEventListener('DOMContentLoaded', () => {
     let paddleX = (canvas.width - paddleWidth) / 2;
 
     // Block variables
+    const blockRowCount = 5;
+    const blockColumnCount = 6;
     const blockWidth = 75;
     const blockHeight = 20;
-    let blockX = (canvas.width - blockWidth) / 2;
-    let blockY = 100;
-    let blockVisible = true; // Visibility flag for the block
+    const blockPadding = 10;
+    const blockOffsetTop = 30;
+    const blockOffsetLeft = 30;
+    let blocks = [];
+
+    // Initialize blocks
+    for (let c = 0; c < blockColumnCount; c++) {
+        blocks[c] = [];
+        for (let r = 0; r < blockRowCount; r++) {
+            blocks[c][r] = { x: 0, y: 0, visible: true };
+        }
+    }
 
     // Event listeners for paddle movement
     document.addEventListener('keydown', (e) => {
@@ -49,13 +60,22 @@ document.addEventListener('DOMContentLoaded', () => {
         ctx.fill();
         ctx.closePath();
 
-        // Draw the block if it is visible
-        if (blockVisible) {
-            ctx.beginPath();
-            ctx.rect(blockX, blockY, blockWidth, blockHeight);
-            ctx.fillStyle = '#0095DD';
-            ctx.fill();
-            ctx.closePath();
+        // Draw the blocks
+        for (let c = 0; c < blockColumnCount; c++) {
+            for (let r = 0; r < blockRowCount; r++) {
+                if (blocks[c][r].visible) {
+                    let blockX = (c * (blockWidth + blockPadding)) + blockOffsetLeft;
+                    let blockY = (r * (blockHeight + blockPadding)) + blockOffsetTop;
+                    blocks[c][r].x = blockX;
+                    blocks[c][r].y = blockY;
+
+                    ctx.beginPath();
+                    ctx.rect(blockX, blockY, blockWidth, blockHeight);
+                    ctx.fillStyle = '#00FF00'; // changed green
+                    ctx.fill();
+                    ctx.closePath();
+                }
+            }
         }
 
         // Update ball position
@@ -78,16 +98,21 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
-        // Collision detection with the block
-        if (blockVisible) {
-            if (
-                ballX > blockX &&
-                ballX < blockX + blockWidth &&
-                ballY - ballRadius < blockY + blockHeight &&
-                ballY + ballRadius > blockY
-            ) {
-                dy = -dy; // Reverse ball direction
-                blockVisible = false; // Hide the block
+        // Collision detection with the blocks
+        for (let c = 0; c < blockColumnCount; c++) {
+            for (let r = 0; r < blockRowCount; r++) {
+                let block = blocks[c][r];
+                if (block.visible) {
+                    if (
+                        ballX > block.x &&
+                        ballX < block.x + blockWidth &&
+                        ballY - ballRadius < block.y + blockHeight &&
+                        ballY + ballRadius > block.y
+                    ) {
+                        dy = -dy; // Reverse ball direction
+                        block.visible = false; // Hide the block
+                    }
+                }
             }
         }
 

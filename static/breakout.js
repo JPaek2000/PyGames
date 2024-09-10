@@ -72,11 +72,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     // Set block color based on row and column
                     let blockColor;
                     if ((c + r) % 3 === 0) {
-                        blockColor = '#FF0000'; // Red
+                        blockColor = '#FFB6C1'; // Red
                     } else if ((c + r) % 3 === 1) {
-                        blockColor = '#0000FF'; // Blue
+                        blockColor = '#ADD8E6'; // Blue
                     } else {
-                        blockColor = '#00FF00'; // Green
+                        blockColor = '#90EE90'; // Green
                     }
 
                     ctx.beginPath();

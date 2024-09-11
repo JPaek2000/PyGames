@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let paddleHeight = 10;
     let paddleWidth = 75;
     let paddleX = (canvas.width - paddleWidth) / 2;
+    let paddleY = canvas.height - 30; // Raised paddle higher by reducing the value
 
     // Block variables
     const blockRowCount = 5;
@@ -55,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Draw the paddle
         ctx.beginPath();
-        ctx.rect(paddleX, canvas.height - paddleHeight, paddleWidth, paddleHeight);
+        ctx.rect(paddleX, paddleY, paddleWidth, paddleHeight);
         ctx.fillStyle = '#0095DD';
         ctx.fill();
         ctx.closePath();

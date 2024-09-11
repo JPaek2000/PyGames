@@ -103,10 +103,11 @@ document.addEventListener('DOMContentLoaded', () => {
             // Check if the ball hits the paddle at its new position
             if (ballX > paddleX && ballX < paddleX + paddleWidth) {
                 dy = -dy;
-            } else if (ballY + dy > canvas.height - ballRadius) {
-                // Game over
-                document.location.reload();
-            }
+            } 
+        } else if (ballY + dy > canvas.height - ballRadius) {
+            // Game over condition fix
+            alert('Game Over!');
+            document.location.reload();
         }
 
         // Collision detection with the blocks

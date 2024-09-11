@@ -99,11 +99,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         if (ballY + dy < ballRadius) {
             dy = -dy;
-        } else if (ballY + dy > canvas.height - ballRadius) {
-            // Check if the ball hits the paddle
+        } else if (ballY + dy > paddleY - ballRadius && ballY + dy < paddleY + paddleHeight) {
+            // Check if the ball hits the paddle at its new position
             if (ballX > paddleX && ballX < paddleX + paddleWidth) {
                 dy = -dy;
-            } else {
+            } else if (ballY + dy > canvas.height - ballRadius) {
                 // Game over
                 document.location.reload();
             }
